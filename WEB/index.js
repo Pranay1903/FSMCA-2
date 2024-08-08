@@ -17,5 +17,5 @@ const person = {firstName:"John", lastName:"Doe"};
 // Array object
 const Name = ["Pranay", "Neel", "Harsh"];
 
-// Date object:
+// Date object
 const date = new Date("2022-03-19");
