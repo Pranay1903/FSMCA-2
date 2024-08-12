@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display Examples</title>
+    <style>
+        /* Block display */
+        .block-example {
+            display: block;
+            width: 100%;
+            background-color: lightblue;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        /* Inline display */
+        .inline-example {
+            display: inline;
+            background-color: lightgreen;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        /* Inline-block display */
+        .inline-block-example {
+            display: inline-block;
+            width: 150px;
+            background-color: lightcoral;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        /* None display */
+        .none-example {
+            display: none;
+            background-color: lightgray;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        /* Flex display */
+        .flex-example {
+            display: flex;
+            background-color: lightgoldenrodyellow;
+            padding: 10px;
+        }
+
+        .flex-example div {
+            background-color: coral;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        /* Grid display */
+        .grid-example {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            background-color: lightsteelblue;
+            padding: 10px;
+        }
+
+        .grid-example div {
+            background-color: cornflowerblue;
+            padding: 20px;
+        }
+
+        /* Inline-flex display */
+        .inline-flex-example {
+            display: inline-flex;
+            background-color: lightpink;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .inline-flex-example div {
+            background-color: mediumvioletred;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        /* Table display */
+        .table-example {
+            display: table;
+            width: 100%;
+            background-color: lightcyan;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        .table-row {
+            display: table-row;
+        }
+
+        .table-cell {
+            display: table-cell;
+            background-color: lightseagreen;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Display Property Examples</h1>
+
+    <!-- Block display -->
+    <div class="block-example">
+        This is a block-level element. It takes up the full width of the container.
+    </div>
+
+    <!-- Inline display -->
+    <div class="inline-example">
+        This is an inline element.
+    </div>
+    <div class="inline-example">
+        Another inline element.
+    </div>
+
+    <!-- Inline-block display -->
+    <div class="inline-block-example">
+        This is an inline-block element.
+    </div>
+    <div class="inline-block-example">
+        Another inline-block element.
+    </div>
+
+    <!-- None display -->
+    <div class="none-example">
+        This element is hidden using display: none; (You can't see it!)
+    </div>
+
+    <!-- Flex display -->
+    <div class="flex-example">
+        <div>Flex Item 1</div>
+        <div>Flex Item 2</div>
+        <div>Flex Item 3</div>
+    </div>
+
+    <!-- Grid display -->
+    <div class="grid-example">
+        <div>Grid Item 1</div>
+        <div>Grid Item 2</div>
+        <div>Grid Item 3</div>
+        <div>Grid Item 4</div>
+        <div>Grid Item 5</div>
+        <div>Grid Item 6</div>
+    </div>
+
+    <!-- Inline-flex display -->
+    <div class="inline-flex-example">
+        <div>Inline-Flex Item 1</div>
+        <div>Inline-Flex Item 2</div>
+    </div>
+
+    <!-- Table display -->
+    <div class="table-example">
+        <div class="table-row">
+            <div class="table-cell">Table Cell 1</div>
+            <div class="table-cell">Table Cell 2</div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell">Table Cell 3</div>
+            <div class="table-cell">Table Cell 4</div>
+        </div>
+    </div>
+
+</body>
+</html>
