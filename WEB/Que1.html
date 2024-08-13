@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu Example</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+select {
+    font-size: 16px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+button {
+    font-size: 16px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="userChoice">Select an option:</label>
+        <select id="userChoice">
+            <option value="1">Factorial</option>
+            <option value="2">Palindrome</option>
+        </select>
+        <button onclick="processInput()">Submit</button>
+    </div>
+
+    <script>function processInput() {
+    const userChoice = document.getElementById('userChoice').value;
+    const number = parseInt(prompt("Enter a number:"));
+
+    if (isNaN(number)) {
+        alert("Please enter a valid number.");
+        return;
+    }
+
+    if (userChoice == 1) {
+        // Calculate factorial
+        let factorial = 1;
+        for (let i = 1; i <= number; i++) {
+            factorial *= i;
+        }
+        alert(`The factorial of ${number} is ${factorial}.`);
+    } else if (userChoice == 2) {
+        // Check if palindrome
+        const originalNumber = number.toString();
+        const reversedNumber = originalNumber.split('').reverse().join('');
+        if (originalNumber === reversedNumber) {
+            alert(`${number} is a palindrome.`);
+        } else {
+            alert(`${number} is not a palindrome.`);
+        }
+    } else {
+        alert("Invalid choice.");
+    }
+}
+</script>
+</body>
+</html>
