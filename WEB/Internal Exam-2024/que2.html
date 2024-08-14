@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Path Animation</title>
+    <style>
+        #path {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            position: relative;
+        }
+        #image {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="path">
+        <img id="image" src="image.png" alt="image" onclick="startAnimation()">
+    </div>
+    <script>
+        function startAnimation() {
+            var img = document.getElementById("image");
+            var position = 0;
+            var travel = 150; // Total distance to move
+
+            function moveRight() {
+                var interval = setInterval(function () {
+                    if (position >= travel) {
+                        clearInterval(interval);
+                        position = 0;
+                        moveDown(); 
+                    } else {
+                        position++;
+                        img.style.left = position + "px";
+                    }
+                }, 5); 
+            }
+
+            function moveDown() {
+                var interval = setInterval(function () {
+                    if (position >= travel) {
+                        clearInterval(interval);
+                        position = 0;
+                        moveLeft(); 
+                    } else {
+                        position++;
+                        img.style.top = position + "px";
+                    }
+                }, 5);
+            }
+
+            function moveLeft() {
+                var interval = setInterval(function () {
+                    if (position >= travel) {
+                        clearInterval(interval);
+                        position = 0;
+                        moveUp(); 
+                    } else {
+                        position++;
+                        img.style.left = (travel - position) + "px";
+                    }
+                }, 5);
+            }
+
+            function moveUp() {
+                var interval = setInterval(function () {
+                    if (position >= travel) {
+                        clearInterval(interval);
+                    } else {
+                        position++;
+                        img.style.top = (travel - position) + "px";
+                    }
+                }, 5);
+            }
+
+            moveRight(); 
+        }
+    </script>
+</body>
+</html>
