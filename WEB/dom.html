@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #box {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            position: absolute;
+            top: 50px;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1 id="title">
+        Hello, World!
+    </h1>
+
+
+    <p class="intro">
+
+        This is an example paragraph.
+    </p>
+
+
+    <div id="content">
+
+        <p>
+
+            This is another paragraph inside a div.
+        </p>
+
+
+        <a id="link" href="https://example.com">
+
+            Click here
+        </a>
+    </div>
+
+    <div style="position: relative;">
+        <div id="box" style="position: absolute; left: 100px; top: 50px;"></div>
+    </div>
+    <button onclick="startAnimation()">Start Animation</button>
+
+    <button onclick="call()">Change Content</button>
+    <button onclick="changeAttribute()">Change Link</button>
+    <button onclick="addElement()">Add Paragraph</button>
+    <button onclick="removeElement()">Remove First Paragraph</button>
+
+    <script src="script.js"></script>
+    <script src="dates.js"></script>
+
+    <script>
+
+        function startAnimation() {
+            var box = document.getElementById("box");
+            var position = 0; // Initial position of the box
+            var interval = setInterval(frame, 5); // Move the box every 5ms
+
+            function frame() {
+                if (position >= window.innerWidth - 50) { // Stop animation when box reaches the right edge
+                    clearInterval(interval);
+                } else {
+                    position++; // Increase the position by 1px
+                    box.style.left = position + "px"; // Update the box's position
+                }
+            }
+        }
+
+        // Function to change the text content of the <h1> element
+        function changeContent() {
+            document.getElementById("title").textContent = "Welcome to the Updated DOM!";
+        }
+
+        // Function to change the href attribute of the <a> element
+        function changeAttribute() {
+            document.getElementById("link").setAttribute("href", "https://newlink.com");
+            document.getElementById("link").textContent = "Visit the new link!";
+        }
+
+        // Function to add a new paragraph inside the <div> element
+        function addElement() {
+            var newParagraph = document.createElement("p");
+            newParagraph.textContent = "This is a new paragraph added via JavaScript.";
+            document.getElementById("content").appendChild(newParagraph);
+        }
+
+        // Function to remove the first paragraph inside the <div> element
+        function removeElement() {
+            var firstParagraph = document.querySelector("#content p");
+            if (firstParagraph) {
+                firstParagraph.parentNode.removeChild(firstParagraph);
+            } else {
+                alert("No paragraph left to remove!");
+            }
+        }
+    </script>
+
+    <!-- Comment Node: Represents a comment in the DOM -->
+    <!-- This is a comment -->
+
+</body>
+
+</html>
