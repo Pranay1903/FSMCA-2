@@ -92,16 +92,16 @@ console.log("Sum of array:", sum);
 let num = 1234.56;
 
 // Converts a number to a string
-let numStr = num.toString();
-console.log("Number as a string:", numStr);
+let tostr = num.toString();
+console.log("Number as a string:", tostr);
 
 // Returns the number in exponential notation
-let numExponential = num.toExponential(2);
-console.log("Number in exponential notation:", numExponential);
+let toexpo = num.toExponential(2);
+console.log("Number in exponential notation:", toexpo);
 
 // Rounds the number to a specified number of decimal places
-let numFixed = num.toFixed(2);
-console.log("Number with 2 decimal places:", numFixed);
+// let tofix = num.toFtofixixed(2);
+// console.log("Number with 2 decimal places:", tofixed);
 
 // Formats the number to a specified length
 let numPrecision = num.toPrecision(6);
@@ -110,40 +110,3 @@ console.log("Number with precision of 6:", numPrecision);
 // Returns the primitive value of a Number object
 let numValue = num.valueOf();
 console.log("Primitive value of number:", numValue);
-
-// Converts a value to a number
-let numFromString = Number("12345");
-console.log("Number from string:", numFromString);
-
-// Parses a string and returns a floating-point number
-let floatFromString = parseFloat("12345.6789");
-console.log("Parsed float:", floatFromString);
-
-// Parses a string and returns an integer
-let intFromString = parseInt("12345");
-console.log("Parsed integer:", intFromString);
-
-// The difference between 1 and the smallest number greater than 1
-console.log("Number.EPSILON:", Number.EPSILON);
-
-// The largest possible number in JavaScript
-console.log("Number.MAX_VALUE:", Number.MAX_VALUE);
-
-// The smallest possible number in JavaScript
-console.log("Number.MIN_VALUE:", Number.MIN_VALUE);
-
-// The maximum safe integer (2^53 - 1)
-console.log("Number.MAX_SAFE_INTEGER:", Number.MAX_SAFE_INTEGER);
-
-// The minimum safe integer -(2^53 - 1)
-console.log("Number.MIN_SAFE_INTEGER:", Number.MIN_SAFE_INTEGER);
-
-// Represents positive infinity
-console.log("Number.POSITIVE_INFINITY:", Number.POSITIVE_INFINITY);
-
-// Represents negative infinity
-console.log("Number.NEGATIVE_INFINITY:", Number.NEGATIVE_INFINITY);
-
-// A "Not-a-Number" value
-console.log("NaN value:", NaN);
-
