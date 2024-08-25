@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asynchronous Concept</title>
+  </head>
+  <body>
+    <h1>Hello There!</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+      const randomcolor = function () {
+        const hex = "0123456789abcdef";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += hex[Math.floor(Math.random() * 16)]; //here i multiplied 16 so that it will generate value till 16
+        }
+        return color;
+      };
+
+
+      const greet = function (str) {
+        console.log("Hi " + str);
+        console.log(randomcolor());
+      };
+
+      const change = function () {
+        console.log("working");
+        document.body.style.backgroundColor = randomcolor();
+      };
+
+      let intervalid;
+
+      document.getElementById("start").addEventListener("click", function () {
+        intervalid = setInterval(change, 2000);
+      });
+
+      document.getElementById("stop").addEventListener("click", function () {
+        clearInterval(intervalid);
+      });
+    </script>
+  </body>
+</html>
