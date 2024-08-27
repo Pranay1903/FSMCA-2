@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 50px);
+        grid-template-rows: repeat(3, 50px);
+        gap: 5px;
+      }
+      .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #333;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Click to increment number</h2>
+    <div class="container" id="grid"></div>
+
+    <script>
+      let array = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ];
+
+      function renderarray() {
+        const container = document.getElementById("grid");
+        container.innerHTML = ""; 
+
+        for (let i = 0; i < array.length; i++) {
+          for (let j = 0; j < array[i].length; j++) {
+            const cell = document.createElement("div");
+            cell.className = "item";
+            cell.textContent = array[i][j];
+            cell.addEventListener("click", function () {
+              incrementCell(i, j);
+            });
+            container.appendChild(cell);
+          }
+        }
+      }
+
+      function incrementCell(row, col) {
+        array[row][col]++;
+        if (array[row][col] > 9) {
+          array[row][col] = 1;
+        }
+        renderarray();
+      }
+
+      renderarray();
+    </script>
+  </body>
+</html>
