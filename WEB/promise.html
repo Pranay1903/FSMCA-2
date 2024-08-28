@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <script>
+      // promise is introduced in es6 version before that the promise aciehev through the bluebird library
+      const promiseOne = new Promise(function (resolve, reject) {
+        //do an async
+        //dbcall,cryptography,network
+        setTimeout(function () {
+          console.log("async task is complete");
+          resolve(); //inorder to connect .then method resolve() have to call
+        }, 1000);
+      }); //promise take  callbackfn as a argument
+
+      //consuming promise
+      promiseOne.then(function () {
+        console.log("promise is consumed");
+      });
+
+      new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          console.log("async 2 task is done");
+          resolve();
+        }, 1000);
+      }).then(function () {
+        console.log("promise2 is consumed");
+      });
+
+      //learned passing object (u can also pass array function kbut mostly used object and the passing method is same for all)
+      const promiseThree = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          resolve({ name: "Pranay", email: "pranaypatel1933@gmail.com" });
+        }, 1000);
+      });
+
+      promiseThree.then(function (user) {
+        console.log(user);
+      });
+
+      //now if the request is rejected then what(let assume error u got)
+      const promiseFour = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          let error = true;
+          if (!error) {
+            resolve({ username: "pranay", password: "123" });
+          } else {
+            reject("Error: something went wrong");
+          }
+        }, 1000);
+      });
+
+      promiseFour
+        .then((user) => {
+          console.log(user);
+          return user.username;
+        })
+        .then((username) => {
+          console.log(username);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+        .finally(console.log("hi"));
+
+      //using async/await concept
+      const promiseFive = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          let error = true;
+          if (!error) {
+            resolve({ username: "JS", password: "123" });
+          } else {
+            reject("Error: JS went wrong");
+          }
+        }, 1000);
+      });
+      //it dont. go furthur untill it gets complete
+      async function consumingpromiseFive() {
+        //using try catch block to achieve same as promiseFour
+        try {
+          //it will wait for promisefive to gets completed
+          const response = await promiseFive;
+          console.log(response);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      consumingpromiseFive();
+    </script>
+  </body>
+</html>
