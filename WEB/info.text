@@ -1,2 +1,6 @@
 My name is Pranay.
-I love GitHub more than Git.
+<<<<<<< HEAD
+I love GitHub more than Git.Test
+=======
+I love GitHub.
+>>>>>>> 0b9c90893ecc6e41b1dae70d47f1c3f4beb3ba11
